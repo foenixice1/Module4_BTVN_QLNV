@@ -57,7 +57,7 @@
                                 <div class="form-group">
                                     <label for="branch">Branch</label>
                                     <select id="branch" th:field="*{branch}" class="form-control">
-                                        <option th:each="br:${branchs}" th:value="${br.id}" th:text="${br.name}"></option>
+                                        <option th:each="br :${branchs}" th:value="${br.id}" th:text="${br.name}"></option>
                                     </select>
                                 </div>
 
