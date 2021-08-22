@@ -34,20 +34,19 @@ public class EmployeeController {
         return iBranchService.findAll();
     }
 
-//    @GetMapping("/home")
-//    public ModelAndView home(@PageableDefault(sort = "age", direction = Sort.Direction.ASC) Pageable pageable) {
-//        ModelAndView modelAndView = new ModelAndView("home");
-//        Page<Employee> employees = iEmployeeService.findAll(pageable);
-//        modelAndView.addObject("list", employees);
-//        return modelAndView;
-//    }
-
     @GetMapping("/home")
     public ModelAndView home() {
         ModelAndView modelAndView = new ModelAndView("home");
-        modelAndView.addObject("list", iEmployeeService.findAll());
+        modelAndView.addObject("list", iEmployeeService.showAllEmployee());
         return modelAndView;
     }
+
+//    @GetMapping("/home")
+//    public ModelAndView home() {
+//        ModelAndView modelAndView = new ModelAndView("home");
+//        modelAndView.addObject("list", iEmployeeService.findAll());
+//        return modelAndView;
+//    }
 
     @GetMapping("/create")
     public ModelAndView showCreate() {
@@ -88,12 +87,12 @@ public class EmployeeController {
 
     @PostMapping("/edit/{id}")
     public ModelAndView edit(@Valid @ModelAttribute Employee employee, BindingResult bindingResult) {
-//        employeeValidate.validate(employee, bindingResult);
-//        if (bindingResult.hasFieldErrors()) {
-//                ModelAndView modelAndView = new ModelAndView("edit");
-//                modelAndView.addObject("employees", employee);
-//                return modelAndView;
-//        }
+        employeeValidate.validate(employee, bindingResult);
+        if (bindingResult.hasFieldErrors()) {
+                ModelAndView modelAndView = new ModelAndView("edit");
+                modelAndView.addObject("employees", employee);
+                return modelAndView;
+        }
         iEmployeeService.save(employee);
         return new ModelAndView("redirect:/home");
 

@@ -7,7 +7,7 @@ import org.springframework.data.domain.Pageable;
 import java.util.ArrayList;
 
 public interface IEmployeeService extends IGeneralService<Employee>{
-    Page<Employee> findAll(Pageable pageable);
+    ArrayList<Employee> showAllEmployee();
     ArrayList<Employee> findAllByName(String name);
 
 }
