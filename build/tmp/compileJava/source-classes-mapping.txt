@@ -6,23 +6,23 @@ service/IBranchService.java
  service.IBranchService
 service/IGeneralService.java
  service.IGeneralService
-controller/EmployeeController.java
- controller.EmployeeController
+config/ApplicationConfig.java
+ config.ApplicationConfig
 model/Branch.java
  model.Branch
 repository/IBranchRepo.java
  repository.IBranchRepo
-service/EmployeeService.java
- service.EmployeeService
+config/ApplicationInitializer.java
+ config.ApplicationInitializer
 service/IEmployeeService.java
  service.IEmployeeService
+formatter/BranchFormatter.java
+ formatter.BranchFormatter
 model/Employee.java
  model.Employee
 validate/EmployeeValidate.java
  validate.EmployeeValidate
-formatter/BranchFormatter.java
- formatter.BranchFormatter
-config/ApplicationInitializer.java
- config.ApplicationInitializer
-config/ApplicationConfig.java
- config.ApplicationConfig
+controller/EmployeeController.java
+ controller.EmployeeController
+service/EmployeeService.java
+ service.EmployeeService

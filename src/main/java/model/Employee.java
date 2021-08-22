@@ -12,14 +12,14 @@ public class Employee {
     private Integer id;
 
     @NotEmpty
-//    @Pattern(regexp = "^[F][P]+[T]+\\d{6}$" , message = "EmployeeCode Must start with FPT followed by 6 numbers")
+    @Pattern(regexp = "^[F][P][T]+\\d{6}$" , message = "EmployeeCode Must start with FPT followed by 6 numbers")
     private String employeeCode;
 
     @NotEmpty
-//    @Pattern(regexp = "^[^\\d]+$" , message = "Name only letters can't enter numbers")
+    @Pattern(regexp = "^[^\\d]+$" , message = "Name only letters can't enter numbers")
     private String name;
 
-//    @Min(18)
+    @Min(value = 18, message = "Age must be over 18")
     private int age;
 
     private int wage;

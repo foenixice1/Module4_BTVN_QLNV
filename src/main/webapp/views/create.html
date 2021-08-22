@@ -33,56 +33,53 @@
                                 <label for="ten">Employee Code</label>
                                 <input id="ten" type="text" class="form-control" th:field="*{employeeCode}" required
                                        autofocus>
+                                <p style="color: red" th:if="${#fields.hasErrors('employeeCode')}" th:errors="*{employeeCode}"></p>
 
-
-                                <div class="form-group">
-                                    <label for="name">Name</label>
-                                    <input id="name" type="text" th:field="*{name}" class="form-control" required
-                                           autofocus>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="age">Age</label>
-                                    <input id="age" type="text" th:field="*{age}" class="form-control" required
-                                           autofocus>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="wage">Wage</label>
-                                    <input id="wage" type="text" th:field="*{wage}" class="form-control" required
-                                           autofocus>
-                                </div>
-
-
-                                <div class="form-group">
-                                    <label for="branch">Branch</label>
-                                    <select id="branch" th:field="*{branch}" class="form-control">
-                                            <option th:each="b: ${branchs}" th:value="${b.id}" th:text="${b.name}"></option>
-                                    </select>
-                                </div>
-
-                                <div class="form-group">
-                                    <td style="color: red" th:if="${#fields.hasErrors('employeeCode')}" th:errors="*{employeeCode}"></td>
-
-                                </div>
-
-                                <div class="form-group m-0">
-                                    <button type="submit" class="btn btn-primary btn-block">
-                                        Create
-                                    </button>
-                                </div>
-                                <br>
-                                <div class="form-group m-0">
-                                    <a href="/home" class="btn btn-primary btn-block">
-                                        Cancel
-                                    </a>
-                                </div>
                             </div>
-                        </form>
-                    </div>
+
+
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input id="name" type="text" th:field="*{name}" class="form-control" required
+                                       autofocus>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="age">Age</label>
+                                <input id="age" type="text" th:field="*{age}" class="form-control" required
+                                       autofocus>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="wage">Wage</label>
+                                <input id="wage" type="text" th:field="*{wage}" class="form-control" required
+                                       autofocus>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="branch">Branch</label>
+                                <select id="branch" th:field="*{branch}" class="form-control">
+                                    <option th:each="b: ${branchs}" th:value="${b.id}" th:text="${b.name}"></option>
+                                </select>
+                            </div>
+
+                            <div class="form-group m-0">
+                                <button type="submit" class="btn btn-primary btn-block">
+                                    Create
+                                </button>
+                            </div>
+                            <br>
+                            <div class="form-group m-0">
+                                <a href="/home" class="btn btn-primary btn-block">
+                                    Cancel
+                                </a>
+                            </div>
+                    </form>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 </section>
 </body>

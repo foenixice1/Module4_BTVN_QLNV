@@ -59,16 +59,16 @@ public class EmployeeController {
 
     @PostMapping("/create")
     public ModelAndView create(@Valid @ModelAttribute Employee employee, BindingResult bindingResult) {
-//        employeeValidate.validate(employee, bindingResult);
-//        if (bindingResult.hasFieldErrors()) {
-//            ModelAndView modelAndView = new ModelAndView("create");
-//            modelAndView.addObject("employees", employee);
-//            return modelAndView;
-//        }
+        employeeValidate.validate(employee, bindingResult);
+        if (bindingResult.hasFieldErrors()) {
+            ModelAndView modelAndView = new ModelAndView("create");
+            modelAndView.addObject("employees", employee);
+            return modelAndView;
+        }
         iEmployeeService.save(employee);
-        ModelAndView modelAndView = new ModelAndView("create");
+        ModelAndView modelAndView = new ModelAndView("redirect:/home");
         modelAndView.addObject("employees", new Employee());
-        return new ModelAndView("redirect:/home");
+        return modelAndView;
     }
 
     @GetMapping("/findByName")
